@@ -1,0 +1,11 @@
+stage1_config:    configs/stage1.yaml
+stage2_config:    configs/stage2_convnext.yaml
+data_prep_config: configs/data_prep.yaml
+class_ids:
+  patterned: 0
+  normal:    1
+  clear:     2
+data:
+  train_dir: /research/iprobe-farmanif/2tage_convnext_IJCB/experiments_LG4000/data/val
+  val_dir:   /research/iprobe-farmanif/2tage_convnext_IJCB/experiments_LG4000/data/val
+  test_dir:  /research/iprobe-farmanif/2tage_convnext_IJCB/experiments_LG4000/data/val

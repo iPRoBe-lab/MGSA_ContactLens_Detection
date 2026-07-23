@@ -1,0 +1,13 @@
+--extra-index-url  https://download.pytorch.org/whl/cu121
+torch==2.1.0
+torchvision==0.16.0
+numpy==1.26.3
+opencv-python
+tqdm
+dotmap
+scikit-learn
+ultralytics
+pillow
+seaborn
+matplotlib
+tensorboard

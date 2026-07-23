@@ -1,0 +1,14 @@
+stage1_config:    configs/stage1.yaml
+stage2_config:    configs/stage2_convnext.yaml
+data_prep_config: configs/data_prep.yaml
+
+class_ids:
+  patterned: 0
+  normal:    1
+  clear:     2
+
+# Cross-dataset: model trained on IITD-Vista, tested on IITD-Cogent
+data:
+  train_dir: /research/iprobe-farmanif/2tage_convnext_IJCB/data_IITD_Cogent_ready/iris_contact/train
+  val_dir:   /research/iprobe-farmanif/2tage_convnext_IJCB/data_IITD_Cogent_ready/iris_contact/val
+  test_dir:  /research/iprobe-farmanif/2tage_convnext_IJCB/data_IITD_Cogent_ready/iris_contact/val

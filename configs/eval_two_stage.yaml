@@ -1,0 +1,13 @@
+stage1_config:    configs/stage1.yaml
+stage2_config:    configs/stage2_convnext.yaml
+data_prep_config: configs/data_prep.yaml
+
+class_ids:
+  patterned: 0
+  normal:    1
+  clear:     2
+
+data:
+  train_dir: data/iris_contact/train
+  val_dir:   data/iris_contact/val
+  test_dir:  data/iris_contact/val

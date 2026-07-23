@@ -1,0 +1,28 @@
+seg_classes:
+  - pupil
+  - iris
+  - outer_arc
+
+class_colors:
+  pupil:     [0,   0,   255]
+  iris:      [0,   255, 0  ]
+  outer_arc: [255, 0,   0  ]
+
+# Train / val split (must sum to 1.0)
+data_splits:
+  train: 0.8
+  val:   0.2
+
+# Gaussian smoothing applied before Hough circle detection
+gaus_kernel_size: 5
+gaus_sigma:       0.5
+
+# Outer-arc angular window (degrees, measured from horizontal)
+# Superior [45°,135°] and inferior [225°,315°] quadrants only
+# (nasal/temporal sectors excluded due to eyelid occlusion)
+traversal:
+  right_interval: [45,  135]
+  left_interval:  [225, 315]
+  angle_step:     1
+  min_offset:     5    # px inside limbus
+  max_offset:     35   # px beyond limbus  (δ in the paper)

@@ -1,0 +1,94 @@
+  UND-AD100                                                                                                                                                                                                          
+                                                                                                                                                                                                                     
+  # Stage 1 — train                                                                                                                                                                                                  
+  python train_stage1.py \                                                                                                                                                                                           
+      --config experiments_AD100/configs/stage1_ad100.yaml \                                                                                                                                                         
+      --save_dir experiments_AD100/stage1                                                                                                                                                                            
+                                                                                                                                                                                                                     
+  # Stage 2 — train                                                                                                                                                                                                  
+  python train_stage2.py \                                                                                                                                                                                           
+      --config experiments_AD100/configs/stage2_ad100_convnext.yaml \                                                                                                                                                
+      --save_dir experiments_AD100/stage2_convnext                                                                                                                                                                   
+                                                                                                                                                                                                                     
+  # Evaluate (full pipeline, 5-fold ensemble)                                                                                                                                                                        
+  python eval_two_stage.py \                                                                                                                                                                                         
+      --config experiments_AD100/configs/eval_two_stage_ad100.yaml \                                                                                                                                                 
+      --ckpt1 weights/AD100/stage1/DesNet121_best.pth \                                                                                                                                                            
+      --ckpt2 weights/AD100/stage2/best_model_fold_1.pth \                                                                                                                                                           
+               weights/AD100/stage2/best_model_fold_2.pth \
+               weights/AD100/stage2/best_model_fold_3.pth \                                                                                                                                                          
+               weights/AD100/stage2/best_model_fold_4.pth \                                                                                                                                                        
+               weights/AD100/stage2/best_model_fold_5.pth \                                                                                                                                                          
+      --save_dir experiments_AD100/eval_rerun                                                                                                                                                                        
+   
+  ---                                                                                                                                                                                                                
+  UND-LG4000                                                                                                                                                                                                       
+                                                                                                                                                                                                                     
+  # Stage 1 — train
+  python train_stage1.py \                                                                                                                                                                                           
+      --config experiments_LG4000/configs/stage1_lg4000.yaml \                                                                                                                                                     
+      --save_dir experiments_LG4000/stage1
+                                                                                                                                                                                                                     
+  # Stage 2 — train
+  python train_stage2.py \                                                                                                                                                                                           
+      --config experiments_LG4000/configs/stage2_lg4000_convnext.yaml \                                                                                                                                            
+      --save_dir experiments_LG4000/stage2_convnext
+                                                                                                                                                                                                                     
+  # Evaluate
+  python eval_two_stage.py \                                                                                                                                                                                         
+      --config experiments_LG4000/configs/eval_two_stage_lg4000.yaml \                                                                                                                                             
+      --ckpt1 weights/LG4000/stage1/DesNet121_best.pth \                                                                                                                                                             
+      --ckpt2 weights/LG4000/stage2/best_model_fold_1.pth \
+               weights/LG4000/stage2/best_model_fold_2.pth \                                                                                                                                                         
+               weights/LG4000/stage2/best_model_fold_3.pth \                                                                                                                                                       
+               weights/LG4000/stage2/best_model_fold_4.pth \                                                                                                                                                         
+               weights/LG4000/stage2/best_model_fold_5.pth \                                                                                                                                                         
+      --save_dir experiments_LG4000/eval_rerun
+                                                                                                                                                                                                                     
+  ---                                                                                                                                                                                                                
+  IITD-Cogent
+      /research/iprobe-farmanif/2tage_convnext_IJCB/experiments_IITDCogent                                                                                                                                                                                                               
+  # Stage 1 — train                                                                                                                                                                                                
+  python train_stage1.py \
+      --config /research/iprobe-farmanif/2tage_convnext_IJCB/experiments_IITDCogent/configs/stage1_iitdcogent.yaml \
+      --save_dir experiments_IITDCogent/stage1                                                                                                                                                                       
+   
+  # Stage 2 — train                                                                                                                                                                                                  
+  python train_stage2.py \                                                                                                                                                                                         
+      --config /research/iprobe-farmanif/2tage_convnext_IJCB/experiments_IITDCogent/configs/stage2_iitdcogent_convnext.yaml \
+      --save_dir experiments_IITDCogent/stage2_convnext                                                                                                                                                              
+   
+  # Evaluate                                                                                                                                                                                                         
+  python eval_two_stage.py \                                                                                                                                                                                       
+      --config /research/iprobe-farmanif/2tage_convnext_IJCB/experiments_IITDCogent/configs/eval_two_stage_iitdcogent.yaml \
+      --ckpt1 /research/iprobe-farmanif/Github_2tage_convnext_IJCB/experiments_IITDCogent/stage1/run_20260427_145015/DesNet121_best.pth \                                                                                                                                                         
+      --ckpt2 /research/iprobe-farmanif/Github_2tage_convnext_IJCB/experiments_IITDCogent/stage2_convnext/run_20260427_151115/best_model_fold_1.pth \                                                                                                                                                      
+               /research/iprobe-farmanif/Github_2tage_convnext_IJCB/experiments_IITDCogent/stage2_convnext/run_20260427_151115/best_model_fold_2.pth \                                                                                                                                                     
+               /research/iprobe-farmanif/Github_2tage_convnext_IJCB/experiments_IITDCogent/stage2_convnext/run_20260427_151115/best_model_fold_3.pth \                                                                                                                                                     
+               /research/iprobe-farmanif/Github_2tage_convnext_IJCB/experiments_IITDCogent/stage2_convnext/run_20260427_151115/best_model_fold_4.pth \                                                                                                                                                   
+               /research/iprobe-farmanif/Github_2tage_convnext_IJCB/experiments_IITDCogent/stage2_convnext/run_20260427_151115/best_model_fold_5.pth \                                                                                                                                                     
+      --save_dir experiments_IITDCogent/eval_rerun                                                                                                                                                                 
+                                                                                                                                                                                                                     
+  ---             
+  IITD-Vista
+                                                                                                                                                                                                                     
+  # Stage 1 — train
+  python train_stage1.py \                                                                                                                                                                                           
+      --config experiments_IITDVista/configs/stage1_iitdvista.yaml \
+      --save_dir experiments_IITDVista/stage1
+                                                                                                                                                                                                                     
+  # Stage 2 — train
+  python train_stage2.py \                                                                                                                                                                                           
+      --config experiments_IITDVista/configs/stage2_iitdvista_convnext.yaml \
+      --save_dir experiments_IITDVista/stage2_convnext                                                                                                                                                               
+   
+  # Evaluate                                                                                                                                                                                                         
+  python eval_two_stage.py \
+      --config experiments_IITDVista/configs/eval_two_stage_iitdvista.yaml \
+      --ckpt1 weights/IITDVista/stage1/DesNet121_best.pth \                                                                                                                                                          
+      --ckpt2 weights/IITDVista/stage2/best_model_fold_1.pth \
+               weights/IITDVista/stage2/best_model_fold_2.pth \                                                                                                                                                      
+               weights/IITDVista/stage2/best_model_fold_3.pth \
+               weights/IITDVista/stage2/best_model_fold_4.pth \                                                                                                                                                      
+               weights/IITDVista/stage2/best_model_fold_5.pth \
+      --save_dir experiments_IITDVista/eval_rerun   

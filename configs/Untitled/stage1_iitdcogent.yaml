@@ -1,0 +1,23 @@
+class_ids:
+  patterned: 0
+  normal: 1
+  clear: 1
+
+data:
+  train_dir: /research/iprobe-farmanif/2tage_convnext_IJCB/data_IITD_Cogent_ready/iris_contact/train
+  val_dir:   /research/iprobe-farmanif/2tage_convnext_IJCB/data_IITD_Cogent_ready/iris_contact/val
+  test_dir:  /research/iprobe-farmanif/2tage_convnext_IJCB/data_IITD_Cogent_ready/iris_contact/val
+
+epochs: 50
+inp_dim: [256, 256]
+batch_size: 16
+num_workers: 4
+shuffle: True
+method: 'DesNet121'
+
+lr_scheduler:
+  lr: 0.0005
+  step_size: 10
+  gamma: 0.1
+
+weight_decay: 1e-4

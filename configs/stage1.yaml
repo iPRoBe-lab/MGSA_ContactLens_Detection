@@ -1,0 +1,21 @@
+class_ids:
+  patterned: 0
+  normal: 1
+  clear: 1  # both normal and clear are "non-patterned" for Stage-1
+
+data:
+  train_dir: data/iris_contact/train
+  val_dir:   data/iris_contact/val
+  test_dir:  data/iris_contact/val
+
+epochs:      50
+inp_dim:     [256, 256]
+batch_size:  20
+num_workers: 4
+shuffle:     true
+method:      DesNet121
+
+lr_scheduler:
+  lr:        0.001   # initial learning rate
+  step_size: 10      # epochs between LR drops
+  gamma:     0.1     # LR multiplied by this at each step

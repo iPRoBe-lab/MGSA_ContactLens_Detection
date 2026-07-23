@@ -1,0 +1,47 @@
+class_ids:
+  normal: 0
+  clear:  1
+
+seg_classes:
+  - pupil
+  - iris
+  - outer_arc
+
+roi_classes:
+  - pupil
+  - iris
+  - outer_arc
+
+data:
+  train_dir: data/iris_contact/train
+  val_dir:   data/iris_contact/val
+  test_dir:  data/iris_contact/val
+
+# ── Backbone ──────────────────────────────────────────────────────────────────
+backbone:         resnet
+resnet_type:      resnet101      # resnet18 | resnet34 | resnet50 | resnet101
+attention_layer:  layer2         # layer1 | layer2 | layer3 | layer4 | '' (disabled)
+
+# ── Attention ─────────────────────────────────────────────────────────────────
+attn_type:    spatial
+num_heads:    4
+se_reduction: 16
+
+# ── Training ──────────────────────────────────────────────────────────────────
+epochs:          80
+inp_dim:         [480, 640]
+batch_size:      16
+num_workers:     4
+dropout_prob:    0.3
+
+optimizer:       AdamW
+weight_decay:    1.0e-4
+criterion:       CrossEntropyLoss
+label_smoothing: 0.05
+
+lr_scheduler:
+  type:      cosine
+  lr:        0.0002
+  eta_min:   1.0e-6
+  step_size: 15
+  gamma:     0.1
