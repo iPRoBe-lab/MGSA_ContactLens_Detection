@@ -314,7 +314,7 @@ Both scripts output `results.csv` with columns: `Image Name`, `Prediction`, `Mas
 
 ## Citation
 
-If you use this code or weights in your research, please cite:
+If you use this code or weights in your research, please cite:\
 Accepted: 2026 IEEE International Joint Conference on Biometrics (IJCB)
 ```bibtex
 @article{farmanifard2026detecting,
