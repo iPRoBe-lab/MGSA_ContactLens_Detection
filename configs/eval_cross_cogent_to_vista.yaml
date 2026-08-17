@@ -9,6 +9,6 @@ class_ids:
 
 # Cross-dataset: model trained on IITD-Cogent, tested on IITD-Vista
 data:
-  train_dir: /research/iprobe-farmanif/2tage_convnext_IJCB/data_IITDVista_ready/iris_contact/train
-  val_dir:   /research/iprobe-farmanif/2tage_convnext_IJCB/data_IITDVista_ready/iris_contact/val
-  test_dir:  /research/iprobe-farmanif/2tage_convnext_IJCB/data_IITDVista_ready/iris_contact/val
+  train_dir: */iris_contact/train
+  val_dir:  */iris_contact/val
+  test_dir:  */iris_contact/val
