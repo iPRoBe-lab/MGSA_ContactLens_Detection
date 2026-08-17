@@ -6,6 +6,6 @@ class_ids:
   normal:    1
   clear:     2
 data:
-  train_dir: /research/iprobe-farmanif/2tage_convnext_IJCB/experiments_AD100/data/val
-  val_dir:   /research/iprobe-farmanif/2tage_convnext_IJCB/experiments_AD100/data/val
-  test_dir:  /research/iprobe-farmanif/2tage_convnext_IJCB/experiments_AD100/data/val
+  train_dir: */data/val
+  val_dir:   */data/val
+  test_dir:  */data/val
