@@ -3,7 +3,6 @@ train_stage2.py - Stage-2 training: Normal vs. Clear lens classification.
 
 Supports ConvNeXt and ResNet backbones with mask-guided attention.
 
-Key improvement over previous version
 --------------------------------------
 --combine_data  Merges train + val into one pool and runs identity-stratified
                 5-fold CV.  Every subject's images stay in one fold so there
