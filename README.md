@@ -315,12 +315,13 @@ Both scripts output `results.csv` with columns: `Image Name`, `Prediction`, `Mas
 ## Citation
 
 If you use this code or weights in your research, please cite:
-
+Accepted: 2026 IEEE International Joint Conference on Biometrics (IJCB)
 ```bibtex
-@inproceedings{farmanifard2025twostage,
-  title     = {Two-Stage Contact Lens Detection with Mask-Guided Spatial Attention for Iris Recognition},
-  booktitle = {Proceedings of the IEEE International Joint Conference on Biometrics (IJCB)},
-  year      = {2025}
+@article{farmanifard2026detecting,
+  title={Detecting Clear Contact Lenses for Iris Recognition: A Two-Stage Mask-Guided Attention Approach},
+  author={Farmanifard, Parisa and Ross, Arun},
+  journal={arXiv preprint arXiv:2608.08977},
+  year={2026}
 }
 ```
 
